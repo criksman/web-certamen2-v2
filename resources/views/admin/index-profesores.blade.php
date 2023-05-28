@@ -63,7 +63,7 @@
 
       <div class="row mb-3">
         <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-          <a class="btn btn-primary fw-bold" href="#">Ingresar profesor</a>
+          <a class="btn btn-primary fw-bold" href="{{ route('admin.create-profesores') }}">Ingresar profesor</a>
       </div>
 
       <div class="col-6 d-flex flex-column align-items-center justify-content-center">

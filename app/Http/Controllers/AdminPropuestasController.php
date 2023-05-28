@@ -22,6 +22,6 @@ class AdminPropuestasController extends Controller
         $propuesta->estado = $request->estado;
         $propuesta->save();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index-estudiantes');
     }
 }

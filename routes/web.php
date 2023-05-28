@@ -23,6 +23,8 @@ use App\Http\Controllers\AdminProfesoresController;
 //ADMIN-ESTUDIANTE
 Route::get('/admin/index', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/estudiantes/index', [AdminEstudiantesController::class, 'index'])->name('admin.index-estudiantes');
+Route::get('/admin/estudiantes/create', [AdminEstudiantesController::class, 'create'])->name('admin.create-estudiantes');
+Route::post('/admin/estudiantes/store',[AdminEstudiantesController::class, 'store'])->name('admin.store-estudiantes');
 
 //ADMIN-ESTUDIANTE-PROPUESTA
 Route::get('/admin/estudiantes/{estudiante}/propuestas', [AdminPropuestasController::class, 'show'])->name('admin.show-propuestas');
@@ -31,3 +33,5 @@ Route::put('/admin/estudiantes/{propuesta}/update',[AdminPropuestasController::c
 
 //ADMIN-PROFESORES
 Route::get('/admin/profesores/index', [AdminProfesoresController::class, 'index'])->name('admin.index-profesores');
+Route::get('/admin/profesores/create',[AdminProfesoresController::class, 'create'])->name('admin.create-profesores');
+Route::post('/admin/profesores/store',[AdminProfesoresController::class, 'store'])->name('admin.store-profesores');
