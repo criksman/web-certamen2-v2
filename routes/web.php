@@ -5,6 +5,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminEstudiantesController;
 use App\Http\Controllers\AdminPropuestasController;
 use App\Http\Controllers\AdminProfesoresController;
+use App\Http\Controllers\ProfesoresController;
+use App\Http\Controllers\ProfesoresPropuestasController;
+use App\Http\Controllers\ProfesoresEstudiantesController;
+use App\Http\Controllers\EstudiantesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +40,10 @@ Route::put('/admin/estudiantes/{propuesta}/update',[AdminPropuestasController::c
 Route::get('/admin/profesores/index', [AdminProfesoresController::class, 'index'])->name('admin.index-profesores');
 Route::get('/admin/profesores/create',[AdminProfesoresController::class, 'create'])->name('admin.create-profesores');
 Route::post('/admin/profesores/store',[AdminProfesoresController::class, 'store'])->name('admin.store-profesores');
+
+//PROFESORES
+Route::get('/profesores/index',[ProfesoresController::class,'index'])->name('profesores.index');
+Route::get('/profesores/{profesor}/estudiantes/show',[ProfesoresEstudiantesController::class,'show'])->name('profesores.show-estudiantes');
+
+//ESTUDIANTE
+Route::get('/estudiantes/index', [EstudiantesController::class, 'index'])->name('estudiantes.index');
