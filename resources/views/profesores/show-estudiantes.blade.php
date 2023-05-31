@@ -29,7 +29,7 @@
           <td>{{ $estudiante->nombre }}</td>
           <td>{{ $estudiante->apellido }}</td>
           <td>{{ $estudiante->email }}</td>
-          <td> <a class="btn btn-success" href="#">Ver propuestas</a> </td>
+          <td> <a class="btn btn-success" href="{{ route('profesores.show-propuestas', [$profesor->rut , $estudiante->rut]) }}">Ver propuestas</a> </td>
         </tr>
         @endforeach
       </tbody>
