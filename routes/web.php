@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminProfesoresController;
 use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\ProfesoresPropuestasController;
 use App\Http\Controllers\ProfesoresEstudiantesController;
+use App\Http\Controllers\ProfesoresComentariosController;
 
 use App\Http\Controllers\EstudiantesController;
 
@@ -36,12 +37,12 @@ Route::get('/admin/estudiantes/create', [AdminEstudiantesController::class, 'cre
 Route::post('/admin/estudiantes/store',[AdminEstudiantesController::class, 'store'])->name('admin.store-estudiantes');
 
 //ADMIN-ESTUDIANTE-PROPUESTA
-Route::get('/admin/estudiantes/{estudiante}/propuestas/show', [AdminPropuestasController::class, 'show'])->name('admin.show-propuestas');
+Route::get('/admin/estudiantes/{estudiante}/propuestas/show',[AdminPropuestasController::class, 'show'])->name('admin.show-propuestas');
 Route::get('/admin/estudiantes/{estudiante}/propuestas/{propuesta}/edit',[AdminPropuestasController::class, 'edit'])->name('admin.edit-propuesta');
-Route::put('/admin/{propuesta}/update',[AdminPropuestasController::class, 'update'])->name('admin.update-propuesta');
+Route::put('/admin/estudiantes/{estudiante}/propuestas/{propuesta}/update',[AdminPropuestasController::class, 'update'])->name('admin.update-propuesta');
 
 //ADMIN-PROFESORES
-Route::get('/admin/profesores/index', [AdminProfesoresController::class, 'index'])->name('admin.index-profesores');
+Route::get('/admin/profesores/index',[AdminProfesoresController::class, 'index'])->name('admin.index-profesores');
 Route::get('/admin/profesores/create',[AdminProfesoresController::class, 'create'])->name('admin.create-profesores');
 Route::post('/admin/profesores/store',[AdminProfesoresController::class, 'store'])->name('admin.store-profesores');
 
@@ -53,8 +54,13 @@ Route::get('/profesores/{profesor}/estudiantes/show',[ProfesoresEstudiantesContr
 
 //PROFESOR-ESTUDIANTE-PROPUESTA
 Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/show',[ProfesoresPropuestasController::class, 'show'])->name('profesores.show-propuestas');
-Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/create',[ProfesoresPropuestasController::class,'create'])->name('profesores.create-comentario');
-Route::post('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/store',[ProfesoresPropuestasController::class,'store'])->name('profesores.store-comentario');
+
+//PROFESOR-COMENTARIO
+Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/create',[ProfesoresComentariosController::class,'create'])->name('profesores.create-comentario');
+Route::post('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/store',[ProfesoresComentariosController::class,'store'])->name('profesores.store-comentario');
+Route::delete('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/destroy',[ProfesoresComentariosController::class,'destroy'])->name('profesores.destroy-comentario');
+Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/edit',[ProfesoresComentariosController::class,'edit'])->name('profesores.edit-comentario');
+Route::put('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/update',[ProfesoresComentariosController::class, 'update'])->name('profesores.update-comentario');
 
 //ESTUDIANTE
 Route::get('/estudiantes/index', [EstudiantesController::class, 'index'])->name('estudiantes.index');

@@ -18,10 +18,10 @@ class AdminPropuestasController extends Controller
         return view('admin.edit-propuesta', compact(['estudiante', 'propuesta']));
     }
 
-    public function update(Request $request, Propuesta $propuesta){
+    public function update(Request $request, Estudiante $estudiante, Propuesta $propuesta){
         $propuesta->estado = $request->estado;
         $propuesta->save();
 
-        return redirect()->route('admin.index-estudiantes');
+        return redirect()->route('admin.show-propuestas', compact(['estudiante', 'propuesta']));
     }
 }

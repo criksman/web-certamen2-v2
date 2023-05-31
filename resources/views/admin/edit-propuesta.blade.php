@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col py-5">
-                <form method="POST" action="{{ route('admin.update-propuesta', $propuesta->id) }}">
+                <form method="POST" action="{{ route('admin.update-propuesta', [$estudiante->rut, $propuesta->id]) }}">
                   @method('put')
                   @csrf
                   <label class="form-label" for="estado_alumno"><h1>Estado actual del proyecto:@if($propuesta->estado == 0) Aprobado @elseif($propuesta->estado == 1) En revisión @elseif($propuesta->estado == 2) Rechazado @endif</h1></label>

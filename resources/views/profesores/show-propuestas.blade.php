@@ -23,11 +23,28 @@
         </thead>
         <tbody>
             @foreach($propuestas as $propuesta)
+            
+            @php
+                $pivot = $propuesta->profesores()->wherePivot('profesor_rut', $profesor->rut)->first();
+            @endphp
+            
             <tr>
             <th scope="row">{{ $propuesta->documento }}</th>
             <td>{{ $propuesta->fecha }}</td>
             <td> @if($propuesta->estado == 0) Aprobado @elseif($propuesta->estado == 1) En revisión @elseif($propuesta->estado == 2) Rechazado @endif </td>
-            <td> <a class="btn btn-success" href="{{ route('profesores.create-comentario', [$profesor->rut, $estudiante->rut, $propuesta->id]) }}">Comentar</a> </td>
+            <td> 
+                @if ($pivot)
+                    <form method="POST" action="{{ route('profesores.destroy-comentario', [$profesor->rut, $estudiante->rut, $propuesta->id]) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn btn-success">Borrar comentario</button>
+                    </form>
+
+                    <a class="btn btn-success" href="{{ route('profesores.edit-comentario', [$profesor->rut, $estudiante->rut, $propuesta->id]) }}">Editar comentario</a>
+                @else 
+                    <a class="btn btn-success" href="{{ route('profesores.create-comentario', [$profesor->rut, $estudiante->rut, $propuesta->id]) }}">Comentar</a>
+                @endif
+            </td>
             </tr>
             @endforeach
         </tbody>
