@@ -55,7 +55,7 @@
                   <tr>
                     <th scope="row">{{ $propuesta->documento }}</th>
                     <td>{{ $propuesta->fecha }}</td>
-                    <td> @if($propuesta->estado == 0) Aprobado @elseif($propuesta->estado == 1) En revisión @elseif($propuesta->estado == 2) Rechazado @endif </td>
+                    <td> @if($propuesta->estado == 0) Esperando revisión @elseif($propuesta->estado == 1) Modificar propuesta @elseif($propuesta->estado == 2) Rechazado @elseif($propuesta->estado == 3) Aceptado @endif </td>
                     <td> <a class="btn btn-success" href="{{ route('admin.edit-propuesta', [$estudiante->rut, $propuesta->id])  }}">Cambiar estado</a> </td>
                   </tr>
                   @endforeach

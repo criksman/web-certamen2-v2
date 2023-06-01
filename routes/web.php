@@ -13,6 +13,8 @@ use App\Http\Controllers\ProfesoresEstudiantesController;
 use App\Http\Controllers\ProfesoresComentariosController;
 
 use App\Http\Controllers\EstudiantesController;
+use App\Http\Controllers\EstudiantesPropuestasController;
+use App\Http\Controllers\EstudiantesComentariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +66,6 @@ Route::put('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuest
 
 //ESTUDIANTE
 Route::get('/estudiantes/index', [EstudiantesController::class, 'index'])->name('estudiantes.index');
+Route::get('/estudiantes/{estudiante}/propuestas/index', [EstudiantesPropuestasController::class, 'index'])->name('estudiantes.index-propuestas');
+Route::get('/estudiantes/{estudiante}/propuestas/{propuesta}/comentarios/show', [EstudiantesComentariosController::class, 'show'])->name('estudiantes.show-comentarios');
+Route::post('/estudiantes/{estudiante}/propuestas/store', [EstudiantesPropuestasController::class, 'store'])->name('estudiantes.store-propuesta');
