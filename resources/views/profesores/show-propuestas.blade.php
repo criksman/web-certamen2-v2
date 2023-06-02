@@ -29,9 +29,9 @@
             @endphp
             
             <tr>
-            <th scope="row">{{ $propuesta->documento }}</th>
+            <th scope="row"> <a href="{{ route('profesores.download-propuesta', [$profesor->rut , $estudiante->rut, $propuesta->id]) }}"> {{ $propuesta->documento }} </a> </th>
             <td>{{ $propuesta->fecha }}</td>
-            <td> @if($propuesta->estado == 0) Aprobado @elseif($propuesta->estado == 1) En revisión @elseif($propuesta->estado == 2) Rechazado @endif </td>
+            <td> @if($propuesta->estado == 0) Esperando revisión @elseif($propuesta->estado == 1) Modificar propuesta @elseif($propuesta->estado == 2) Rechazado @elseif($propuesta->estado == 3) Aceptado @endif </td>
             <td> 
                 @if ($pivot)
                     <form method="POST" action="{{ route('profesores.destroy-comentario', [$profesor->rut, $estudiante->rut, $propuesta->id]) }}">

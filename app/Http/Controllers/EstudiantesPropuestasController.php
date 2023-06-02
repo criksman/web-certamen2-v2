@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Estudiante;
 use App\Models\Propuesta;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Response;
 use Carbon\Carbon;
 
 class EstudiantesPropuestasController extends Controller
@@ -31,5 +32,12 @@ class EstudiantesPropuestasController extends Controller
         $propuesta->save();
 
         return redirect()->route('estudiantes.index-propuestas', compact('estudiante'));
+    }
+
+    public function download(Estudiante $estudiante, Propuesta $propuesta){
+        $documento_nombre = $propuesta->documento;
+        $documento = storage_path('app/public/documentos/pdf/' . $documento_nombre);
+
+        return response()->download($documento);
     }
 }

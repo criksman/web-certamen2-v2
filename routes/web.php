@@ -56,6 +56,7 @@ Route::get('/profesores/{profesor}/estudiantes/show',[ProfesoresEstudiantesContr
 
 //PROFESOR-ESTUDIANTE-PROPUESTA
 Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/show',[ProfesoresPropuestasController::class, 'show'])->name('profesores.show-propuestas');
+Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/download', [ProfesoresPropuestasController::class, 'download'])->name('profesores.download-propuesta');
 
 //PROFESOR-COMENTARIO
 Route::get('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuesta}/comentario/create',[ProfesoresComentariosController::class,'create'])->name('profesores.create-comentario');
@@ -66,6 +67,9 @@ Route::put('/profesores/{profesor}/estudiantes/{estudiante}/propuestas/{propuest
 
 //ESTUDIANTE
 Route::get('/estudiantes/index', [EstudiantesController::class, 'index'])->name('estudiantes.index');
+
+//ESTUDIANTE-PROPUESTA
 Route::get('/estudiantes/{estudiante}/propuestas/index', [EstudiantesPropuestasController::class, 'index'])->name('estudiantes.index-propuestas');
 Route::get('/estudiantes/{estudiante}/propuestas/{propuesta}/comentarios/show', [EstudiantesComentariosController::class, 'show'])->name('estudiantes.show-comentarios');
 Route::post('/estudiantes/{estudiante}/propuestas/store', [EstudiantesPropuestasController::class, 'store'])->name('estudiantes.store-propuesta');
+Route::get('/estudiantes/{estudiante}/propuestas/{propuesta}/download', [EstudiantesPropuestasController::class, 'download'])->name('estudiantes.download-propuesta');

@@ -15,4 +15,11 @@ class ProfesoresPropuestasController extends Controller
         return view('profesores.show-propuestas', compact(['estudiante', 'propuestas', 'profesor']));
     }
 
+    public function download(Profesor $profesor, Estudiante $estudiante, Propuesta $propuesta){
+        $documento_nombre = $propuesta->documento;
+        $documento = storage_path('app/public/documentos/pdf/' . $documento_nombre);
+
+        return response()->download($documento);
+    }
+
 }
