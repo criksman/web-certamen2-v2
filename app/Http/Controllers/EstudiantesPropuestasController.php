@@ -16,6 +16,20 @@ class EstudiantesPropuestasController extends Controller
     }
 
     public function store(Estudiante $estudiante, Request $request){
-        //
+        $documento = $request->documento;
+        
+        $documento_direccion = 'public/documentos/pdf';
+        $documento_nombre = $documento->getClientOriginalName();
+        
+        $path = $request->file('documento')->storeAs($documento_direccion, $documento_nombre);
+        
+        $propuesta = new Propuesta();
+        $propuesta->documento = $documento_nombre;
+        $propuesta->estudiante_rut = $estudiante->rut;
+        $propuesta->fecha = Carbon::now();
+        $propuesta->estado = 0;
+        $propuesta->save();
+
+        return redirect()->route('estudiantes.index-propuestas', compact('estudiante'));
     }
 }

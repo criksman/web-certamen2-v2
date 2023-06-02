@@ -47,7 +47,7 @@
                     <option value = "0" @if($propuesta->estado == 0) selected @endif>Esperando Revisión</option>
                     <option value = "1" @if($propuesta->estado == 1) selected @endif>Modificar propuesta</option>
                     <option value = "2" @if($propuesta->estado == 2) selected @endif>Rechazado</option>
-                    <option value = "2" @if($propuesta->estado == 3) selected @endif>Aceptado</option>
+                    <option value = "3" @if($propuesta->estado == 3) selected @endif>Aceptado</option>
                   </select>
                   <div class="row">
                     <div class="col-6 py-5 d-flex flex-column align-items-start justify-content-center">

@@ -39,7 +39,7 @@
             <tbody>
               @foreach($propuestas as $propuesta)
               <tr>
-                <th scope="row"> <a href="#">Placeholder</a> </th>
+                <th scope="row"> <a href="#">{{ $propuesta->documento }}</a> </th>
                 <td> {{ $propuesta->fecha }} </td>
                 <td> @if($propuesta->estado == 0) Esperando revisión @elseif($propuesta->estado == 1) Modificar propuesta @elseif($propuesta->estado == 2) Rechazado @elseif($propuesta->estado == 3) Aceptado @endif </td>
                 <td> <a class="btn btn-success" href="{{ route('estudiantes.show-comentarios', [$estudiante->rut, $propuesta->id]) }}">Ver comentarios</a> </td>
