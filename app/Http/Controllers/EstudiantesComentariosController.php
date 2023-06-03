@@ -8,7 +8,7 @@ use App\Models\Propuesta;
 
 class EstudiantesComentariosController extends Controller
 {
-    public function show(Estudiante $estudiante, Propuesta $propuesta){
+    public function show(Estudiante $estudiante, Propuesta $propuesta){ 
         return view('estudiantes.show-comentarios', compact(['estudiante', 'propuesta']));
     }
 }

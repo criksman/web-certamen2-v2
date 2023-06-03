@@ -18,6 +18,8 @@ class ProfesoresSeeder extends Seeder
             ['rut'=>'34234567-2','nombre'=>'Albert','apellido'=>'Einstein','created_at'=>Carbon::now()],
             ['rut'=>'21446374-5','nombre'=>'Sebastian','apellido'=>'Bach','created_at'=>Carbon::now()],
             ['rut'=>'41621511-K','nombre'=>'Sam','apellido'=>'Fisher','created_at'=>Carbon::now()],
+            ['rut'=>'33241569-2','nombre'=>'Carlos','apellido'=>'Alten','created_at'=>Carbon::now()],
+            ['rut'=>'22334456-7','nombre'=>'Capitan','apellido'=>'Price','created_at'=>Carbon::now()],
         ]);
     }
 }
