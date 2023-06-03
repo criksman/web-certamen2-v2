@@ -1,6 +1,7 @@
 @extends('templates.master')
 
 @section('main-content')
+
 <div class="container min-vh-100">
   <div class="row">
     <div class="col-6 py-5 d-flex flex-column justify-content-center align-items-center">
@@ -11,4 +12,5 @@
     </div>
   </div>
 </div>
+
 @endsection
