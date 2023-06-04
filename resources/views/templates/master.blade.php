@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom2.css') }}">
     <title>Vista administradores</title>
 </head>
 
@@ -38,7 +39,7 @@
     </div>
 
 
-    <div class="container min-vh-100">
+    <div class="container vh-100">
       @yield('main-content')
     </div>
 

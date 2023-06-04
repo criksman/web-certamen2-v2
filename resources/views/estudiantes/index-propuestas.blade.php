@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-6">
 
-        <div class="card mb-2 bg-primary">
+        <div class="card mb-2"style="background-color: #003389">
             <div class="card-body">
                 <h1 class="card-title text-white">Propuestas de Proyecto de: {{ $estudiante->nombre }} {{ $estudiante->apellido }}</h1>
             </div>
@@ -19,7 +19,7 @@
                         <label for="documento" class="form-label">Archivo</label>
                         <input type="file" id="documento" name="documento" class="form-control" accept=".pdf,.doc,.docx,.txt" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Enviar Propuesta</button>
+                    <button type="submit" class="btn btn-primary" style="background-color: #003379">Enviar Propuesta</button>
                 </form>
             </div>
         </div>
