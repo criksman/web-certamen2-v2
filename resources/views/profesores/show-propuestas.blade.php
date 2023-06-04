@@ -53,7 +53,7 @@
 </div>
 <div class="row">
     <div class="col-12 d-flex flex-column align-items-end justify-content-center">
-        <a class="btn btn-primary" href="{{ route('profesores.show-estudiantes', $profesor->rut) }}">Volver atrás</a>
+        <a class="btn btn-primary" style="background-color: #003379" href="{{ route('profesores.show-estudiantes', $profesor->rut) }}">Volver atrás</a>
     </div>
 </div>
 @endsection

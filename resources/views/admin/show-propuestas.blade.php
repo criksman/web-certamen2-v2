@@ -30,7 +30,7 @@
 </div>
 <div class="row">
   <div class="col-12 d-flex flex-column align-items-end justify-content-center">
-    <a class="btn btn-primary" href="{{ route('admin.index-estudiantes') }}">Volver atrás</a>
+    <a class="btn btn-primary" style="background-color: #003379" href="{{ route('admin.index-estudiantes') }}">Volver atrás</a>
   </div>
 </div>
 
