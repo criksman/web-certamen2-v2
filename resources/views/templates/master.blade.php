@@ -38,7 +38,7 @@
     </div>
 
 
-    <div class="container min-vh-100">
+    <div class="container vh-100">
       @yield('main-content')
     </div>
 

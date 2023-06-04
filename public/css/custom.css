@@ -124,6 +124,9 @@
   --bs-form-invalid-color: #f60563;
   --bs-form-invalid-border-color: #f60563;
 }
+body {
+  background: linear-gradient(to top,#f3ebe7,#b2aeaf,#838182 ,#5c5858); /* Fondo degradado personalizado */
+}
 
 [data-bs-theme=dark] {
   color-scheme: dark;
