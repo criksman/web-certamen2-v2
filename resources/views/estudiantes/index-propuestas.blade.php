@@ -2,7 +2,7 @@
 
 @section('main-content')
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-9 my-3">
 
         <div class="card mb-2"style="background-color: #003389">
             <div class="card-body">
@@ -25,8 +25,8 @@
         </div>
 
         <div class="card mb-2">  
-            <h2 class="card-title">Propuestas</h2>
             <div class="card-body">
+            <h2 class="card-title mb-4">Propuestas</h2>
             <table class="table">
             <thead>
               <tr>

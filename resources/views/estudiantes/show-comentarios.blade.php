@@ -4,10 +4,10 @@
 
 <div class="row">
     <div class="col">
-        <div class="card mb-2">  
-            <h2 class="card-title">Comentarios</h2>
+        <div class="card mb-2 my-3">  
             <div class="card-body">
-                <table class="table">
+            <h2 class="card-title mb-3">Comentarios</h2>
+                <table class="table table-secondary table-striped border border-primary">
                 <thead>
                     <tr>
                     <th scope="col">Profesor</th>

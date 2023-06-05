@@ -2,7 +2,7 @@
 
 @section('main-content')
 
-<div class="card" style="margin-top: 150px">
+<div class="card" style="margin-top: 30px">
   <div class="card-body">
     <h3>PROFESORES</h3>
       <table class="table table-secondary table-striped border border-primary ">
