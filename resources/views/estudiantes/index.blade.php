@@ -1,7 +1,7 @@
 @extends('templates.master')
 
 @section('main-content')
-<div class="card">
+<div class="card my-5 ">
     <div class="card-body">
         <h3>Alumnos</h3>
             <table class="table table-secondary table-striped border border-primary ">

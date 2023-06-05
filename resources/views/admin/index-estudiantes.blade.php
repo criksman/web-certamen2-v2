@@ -2,7 +2,7 @@
 
 @section('main-content')
 
-<div class="row">
+<div class="row" style="margin-top: 50px">
   <div class="col py-5">
     <h1>Lista de alumnos</h1>
     
@@ -33,11 +33,11 @@
 
 <div class="row">
   <div class="col-6 d-flex flex-column align-items-start justify-content-center">
-    <a class="btn btn-primary" href="{{ route('admin.create-estudiantes') }}">Ingresar alumno</a>
+    <a class="btn btn-primary" style="background-color: #003379" href="{{ route('admin.create-estudiantes') }}">Ingresar alumno</a>
   </div>
 
   <div class="col-6 d-flex flex-column align-items-end justify-content-center">
-    <a class="btn btn-primary" href="{{ route('admin.index') }}">Volver atrás</a>
+    <a class="btn btn-primary" style="background-color: #003379" href="{{ route('admin.index') }}">Volver atrás</a>
   </div>
 </div>
 
