@@ -37,6 +37,14 @@
             @endforeach
           </tbody>
         </table>
+        <div class="row mb-3">
+          <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+          </div>
+
+          <div class="col-6 d-flex flex-column align-items-center justify-content-center">
+            <a class="btn btn-primary fw-bold" style="background-color: #003379" href="{{ route('profesores.index') }}">Volver atrás</a>
+          </div>
+        </div>
       </div>
     </div>
 

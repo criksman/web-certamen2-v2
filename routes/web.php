@@ -16,6 +16,8 @@ use App\Http\Controllers\EstudiantesController;
 use App\Http\Controllers\EstudiantesPropuestasController;
 use App\Http\Controllers\EstudiantesComentariosController;
 
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +75,6 @@ Route::get('/estudiantes/{estudiante}/propuestas/index', [EstudiantesPropuestasC
 Route::get('/estudiantes/{estudiante}/propuestas/{propuesta}/comentarios/show', [EstudiantesComentariosController::class, 'show'])->name('estudiantes.show-comentarios');
 Route::post('/estudiantes/{estudiante}/propuestas/store', [EstudiantesPropuestasController::class, 'store'])->name('estudiantes.store-propuesta');
 Route::get('/estudiantes/{estudiante}/propuestas/{propuesta}/download', [EstudiantesPropuestasController::class, 'download'])->name('estudiantes.download-propuesta');
+
+//HOME
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
